@@ -1,4 +1,5 @@
 import './globals.css';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'XR Tools for Education',
@@ -11,10 +12,11 @@ export default function RootLayout({ children }) {
       <body>
         <nav className="bg-blue-500 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
-            <a href="/" className="text-xl font-bold">XR Tools for Education</a>
+            <Link href="/" className="text-xl font-bold">XR Tools for ED</Link>
             <div className="space-x-4">
-              <a href="/" className="hover:underline">Home</a>
-              <a href="/about" className="hover:underline">About</a>
+              <Link href="/" className="hover:underline">Home</Link>
+              <Link href="/blog" className="hover:underline">Blog</Link>
+              <Link href="/about" className="hover:underline">About</Link>
             </div>
           </div>
         </nav>
