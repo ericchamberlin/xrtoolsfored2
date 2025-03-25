@@ -16,6 +16,7 @@ export default function RootLayout({ children }) {
             <div className="space-x-4">
               <Link href="/" className="hover:underline">Home</Link>
               <Link href="/blog" className="hover:underline">Blog</Link>
+              <Link href="/submit" className="hover:underline">Submit Resource</Link>
               <Link href="/about" className="hover:underline">About</Link>
             </div>
           </div>

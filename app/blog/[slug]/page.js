@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }) {
           
           {post.categories && post.categories.length > 0 && (
             <div className="mt-8 pt-6 border-t border-gray-200">
-              <h3 className="text-sm font-medium text-gray-500 mb-2">Categories:</h3>
+              <h3 className="text-sm font-medium text-black-500 mb-2">Categories:</h3>
               <div className="flex flex-wrap gap-2">
                 {post.categories.map((category) => (
                   <span key={category} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
