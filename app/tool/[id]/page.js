@@ -1,6 +1,7 @@
 import { getToolById } from '../../../lib/airtable';
 import Link from 'next/link';
 import VideoThumbnail from '../../../components/VideoThumbnail';
+import Image from 'next/image';
 
 export default async function ToolPage({ params }) {
   const id = params?.id;
@@ -20,16 +21,16 @@ export default async function ToolPage({ params }) {
           </div>
         </div>
       </nav>
-      
-      {/* Cosmic header image without fade */}
+
       <div className="w-full h-48 md:h-64 relative">
-        <img 
+        <Image 
           src="https://i.imgur.com/YNrfsHb.jpeg" 
           alt="Cosmic header" 
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
-      
+
       <div className="container mx-auto p-8">
         <Link href="/" className="text-blue-400 hover:text-blue-300 hover:underline mb-4 inline-block transition-colors">
           ← Back to all resources
@@ -50,18 +51,14 @@ export default async function ToolPage({ params }) {
             </div>
           )}
           
-          <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-2 text-blue-400">Description:</h2>
-            <p className="text-gray-300">{item.description || 'No description available'}</p>
+          <div className="relative w-full h-64 md:h-96">
+            <Image 
+              src={item.thumbnailUrl || '/placeholder-image.jpg'}
+              alt={item.title || 'Tool image'} 
+              fill
+              className="object-cover"
+            />
           </div>
-          
-          {/* Show different metadata based on content type */}
-          {item.duration && (
-            <div className="mb-4">
-              <h3 className="font-medium text-blue-400">Duration:</h3>
-              <p className="text-gray-300">{item.duration}</p>
-            </div>
-          )}
           
           {item.Platform && (
             <div className="mb-4">

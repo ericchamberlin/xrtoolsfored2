@@ -1,4 +1,5 @@
-import { getBlogPosts, urlFor } from '../../lib/sanity';
+import { getBlogPosts } from '../../lib/sanity';
+import Image from 'next/image';
 
 export default async function BlogTestPage() {
   const posts = await getBlogPosts();
@@ -16,11 +17,14 @@ export default async function BlogTestPage() {
           {posts.map((post) => (
             <div key={post._id} className="bg-white rounded-lg shadow-md overflow-hidden">
               {post.mainImage && (
-                <img 
-                  src={urlFor(post.mainImage).width(600).url()} 
-                  alt={post.title} 
-                  className="w-full h-48 object-cover"
-                />
+                <div className="relative w-full h-64">
+                  <Image 
+                    src="https://example.com/your-image.jpg" // Replace with your actual image URL
+                    alt="Blog post image" 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               )}
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
