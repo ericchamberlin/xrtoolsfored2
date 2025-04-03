@@ -13,17 +13,17 @@ export default function BlogPage() {
           <p className="text-sm text-gray-500 mb-4">By Eric Chamberlin</p>
           
           <div className="prose text-gray-800 max-w-none">
-            <p className="mb-4">
+            <p className="mb-4 text-gray-800">
               Welcome to XR Tools for Education, a comprehensive resource designed to help educators, instructional 
               designers, and learning technologists navigate the exciting world of extended reality (XR) in education. Our 
               mission is to curate and showcase the most effective and innovative XR tools that can transform learning 
               experiences across disciplines.
             </p>
             
-            <p className="mb-4">
-              In today's rapidly evolving educational landscape, XR technologies—including virtual reality (VR), augmented 
+            <p className="mb-4 text-gray-800">
+              In today&apos;s rapidly evolving educational landscape, XR technologies—including virtual reality (VR), augmented 
               reality (AR), and mixed reality (MR)—offer unprecedented opportunities to create immersive, engaging, and 
-              effective learning environments. Whether you're looking to enhance remote learning, visualize complex 
+              effective learning environments. Whether you&apos;re looking to enhance remote learning, visualize complex 
               concepts, or create hands-on simulations without physical constraints, this resource will guide you through the 
               available tools and help you make informed decisions for your educational projects.
             </p>

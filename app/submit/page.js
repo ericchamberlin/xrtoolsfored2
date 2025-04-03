@@ -238,7 +238,7 @@ export default function SubmitResourcePage() {
               placeholder="your.email@example.com"
             />
             <p className="text-sm text-gray-500 mt-1">
-              We'll only use this to contact you if we have questions about your submission
+              We&apos;ll only use this to contact you if we have questions about your submission
             </p>
           </div>
           

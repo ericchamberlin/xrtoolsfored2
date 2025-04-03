@@ -1,17 +1,24 @@
 import { getPostBySlug, urlFor } from '../../../lib/sanity';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
 
 // Define components for the Portable Text renderer
 const components = {
   types: {
-    image: ({value}) => (
-      <img 
-        src={urlFor(value).width(800).url()} 
-        alt={value.alt || ' '} 
-        className="my-8 rounded-lg mx-auto"
-      />
-    ),
+    image: ({value}) => {
+      const imageUrl = urlFor(value).width(800).url();
+      return (
+        <div className="my-8 mx-auto relative w-full h-[400px]">
+          <Image 
+            src={imageUrl}
+            alt={value.alt || ' '} 
+            fill
+            className="rounded-lg object-contain"
+          />
+        </div>
+      );
+    },
   },
   marks: {
     link: ({children, value}) => {
@@ -49,11 +56,14 @@ export default async function BlogPostPage({ params }) {
       
       <article className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
         {post.mainImage && (
-          <img 
-            src={urlFor(post.mainImage).width(1200).url()} 
-            alt={post.title} 
-            className="w-full h-64 md:h-96 object-cover"
-          />
+          <div className="relative w-full h-64 md:h-96">
+            <Image 
+              src={urlFor(post.mainImage).width(1200).url()}
+              alt={post.title || 'Blog post image'} 
+              fill
+              className="object-cover"
+            />
+          </div>
         )}
         
         <div className="p-8">

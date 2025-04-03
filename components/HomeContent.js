@@ -1,5 +1,8 @@
 'use client';
 
+import SearchBar from './SearchBar';
+import ContentList from './ContentList';
+
 export default function HomeContent({ initialContent, popularTags }) {
   return (
     <div className="container mx-auto px-4 py-6">
